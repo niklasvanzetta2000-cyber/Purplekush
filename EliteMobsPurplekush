@@ -1,0 +1,29 @@
+name: Build PurpleKush-EliteMobs
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code holen
+        uses: actions/checkout@v4
+
+      - name: Java 25 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Plugin bauen
+        run: |
+          chmod +x gradlew
+          ./gradlew build --no-daemon
+
+      - name: JAR als Download bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: PurpleKush-EliteMobs
+          path: build/libs/PurpleKush-EliteMobs-*.jar
