@@ -1,0 +1,72 @@
+# PurpleKush-EliteMobs – Einstellungen
+# Nach Änderungen: /elitemobs reload
+
+elite:
+  # Wahrscheinlichkeit (0.0 - 1.0), dass ein passendes Monster ein Elite-Monster wird.
+  # 0.15 = 15 %
+  chance: 0.15
+
+  # Nur nachts Elite-Monster spawnen lassen
+  night-only: true
+  # Nacht in Welt-Ticks (Minecraft: 13000 = Dämmerung, 23000 = fast Morgen)
+  night-start: 13000
+  night-end: 23000
+
+  # Welten, in denen Elite-Monster spawnen. Leer lassen = alle normalen Oberwelten.
+  worlds:
+    - world
+
+  # Spawn-Arten, die zählen. NATURAL = normales Spawnen in der Dunkelheit.
+  # Weitere Möglichkeiten: SPAWNER, REINFORCEMENTS, PATROL, RAID, ...
+  spawn-reasons:
+    - NATURAL
+
+  # Monster, die Elite werden können
+  mob-types:
+    - ZOMBIE
+    - HUSK
+    - DROWNED
+    - ZOMBIE_VILLAGER
+    - SKELETON
+    - STRAY
+
+equipment:
+  # Chance pro Rüstungsteil (Helm, Brustpanzer, Hose, Schuhe) bei einem Elite-Monster
+  armor-slot-chance: 0.6
+  # Gewichtung der Rüstungs-Materialien (höher = häufiger)
+  armor-tiers:
+    CHAINMAIL: 25
+    IRON: 45
+    DIAMOND: 25
+    NETHERITE: 5
+
+  # Chance auf eine bessere Waffe (Skelette bekommen einen Bogen, alle anderen ein Schwert)
+  weapon-chance: 0.7
+  weapon-tiers:
+    STONE: 20
+    IRON: 45
+    DIAMOND: 28
+    NETHERITE: 7
+
+  # Chance, dass ein Ausrüstungsteil verzaubert ist
+  enchant-chance: 0.3
+  # Maximales Level der Verzauberung (Schutz / Schärfe / Stärke)
+  max-enchant-level: 3
+
+  # Chance, dass Ausrüstung beim Tod gedroppt wird (0.0 - 1.0).
+  # Vanilla: 0.085. Niedriger = weniger Ausrüstungs-Farming.
+  drop-chance: 0.05
+
+particles:
+  enabled: true
+  # DUST (farbig), WITCH, END_ROD, SOUL_FIRE_FLAME, FLAME, ENCHANT
+  type: DUST
+  # Farbe für DUST als Hex-Code (lila)
+  color: "AA00FF"
+  size: 1.2
+  # Alle wie viele Ticks Partikel erzeugt werden (20 Ticks = 1 Sekunde)
+  interval-ticks: 5
+  # Anzahl der Partikel pro Durchgang
+  count: 4
+  # Zusätzlich die Leuchtumrandung (sichtbar durch Wände). Normalerweise aus.
+  glowing-outline: false
